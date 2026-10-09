@@ -1,0 +1,647 @@
+/* ----------------------------------------------------------------------------------------
+* Ribit Construction Limited — Custom Styles & Product Catalogue Extension
+* Built atop Builtex Construction Template Design System
+* ---------------------------------------------------------------------------------------- */
+
+:root {
+  --ribit-navy: #12223b;
+  --ribit-navy-dark: #0b1626;
+  --ribit-gold: #eaa011;
+  --ribit-gold-hover: #d48e0b;
+  --ribit-gold-light: #fff8e6;
+  --ribit-gold-glow: rgba(234, 160, 17, 0.25);
+  --ribit-border: #e2e8f0;
+  --ribit-card-bg: #ffffff;
+  --ribit-muted: #5a6a85;
+}
+
+/* Header & Logo styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+.ribit-brand-logo {
+  height: 54px;
+  max-width: 220px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+.ribit-brand-logo:hover {
+  transform: scale(1.02);
+}
+.footer-logo .ribit-brand-logo {
+  height: 60px;
+  max-width: 230px;
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+/* Quote Basket Floating Button / Header Action */
+.header-quote-action {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 14px;
+}
+.quote-basket-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.quote-basket-btn:hover {
+  background: var(--ribit-gold);
+  color: var(--ribit-navy);
+  border-color: var(--ribit-gold);
+}
+.quote-count-badge {
+  background: var(--ribit-gold);
+  color: var(--ribit-navy);
+  font-weight: 700;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.quote-basket-btn:hover .quote-count-badge {
+  background: var(--ribit-navy);
+  color: #ffffff;
+}
+
+/* Floating Sticky Quote Cart for Mobile */
+.floating-quote-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: var(--ribit-navy);
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(18, 34, 59, 0.4);
+  border: 2px solid var(--ribit-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.floating-quote-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(234, 160, 17, 0.35);
+  color: #ffffff;
+}
+.floating-quote-fab .badge {
+  background: var(--ribit-gold);
+  color: var(--ribit-navy);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+/* Hero Section Ribit Refinements */
+.hero.dark-section {
+  position: relative;
+  background: linear-gradient(rgba(11, 22, 38, 0.88), rgba(18, 34, 59, 0.94)), url('../images/hero/hero-materials.jpg') center center / cover no-repeat;
+  padding: 210px 0 130px;
+}
+.hero-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 25px;
+}
+.hero-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 14px;
+}
+.hero-trust-badge i {
+  color: var(--ribit-gold);
+}
+
+/* Store / Products Section */
+.ribit-store-section {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+.store-controls-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+}
+.store-search-box {
+  position: relative;
+}
+.store-search-box input {
+  width: 100%;
+  height: 52px;
+  padding: 10px 20px 10px 48px;
+  border-radius: 50px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+.store-search-box input:focus {
+  border-color: var(--ribit-navy);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(18, 34, 59, 0.1);
+}
+.store-search-box i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 17px;
+}
+
+/* Category Filter Chips */
+.category-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.category-chip {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid transparent;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.category-chip:hover {
+  background: #e2e8f0;
+  color: var(--ribit-navy);
+}
+.category-chip.active {
+  background: var(--ribit-navy);
+  color: #ffffff;
+  border-color: var(--ribit-navy);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(18, 34, 59, 0.25);
+}
+
+/* Product Cards */
+.ribit-product-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+.ribit-product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(234, 160, 17, 0.6);
+  box-shadow: 0 15px 35px rgba(18, 34, 59, 0.08);
+}
+.product-card-thumb {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+.product-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.ribit-product-card:hover .product-card-thumb img {
+  transform: scale(1.07);
+}
+.product-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Availability Badge Colors */
+.badge-available {
+  background: #10b981;
+  color: #ffffff;
+}
+.badge-demand {
+  background: #0284c7;
+  color: #ffffff;
+}
+.badge-supplier {
+  background: #0d9488;
+  color: #ffffff;
+}
+.badge-quote {
+  background: var(--ribit-gold);
+  color: var(--ribit-navy);
+}
+.badge-confirm {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+.badge-unavailable {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.product-category-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  background: rgba(18, 34, 59, 0.85);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.product-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.product-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ribit-navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+  min-height: 48px;
+}
+.product-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.product-card-title a:hover {
+  color: var(--ribit-gold);
+}
+.product-card-specs {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 38px;
+}
+.product-card-meta {
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px dashed #e2e8f0;
+}
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.meta-label {
+  color: #64748b;
+  font-weight: 500;
+}
+.meta-value {
+  color: var(--ribit-navy);
+  font-weight: 700;
+}
+.price-tag {
+  color: var(--ribit-navy);
+  font-size: 16px;
+  font-weight: 800;
+}
+.price-tag.request-tag {
+  color: #d97706;
+  font-size: 14px;
+}
+
+.product-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+.btn-quote-add {
+  flex-grow: 1;
+  background: var(--ribit-navy);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn-quote-add:hover {
+  background: var(--ribit-gold);
+  color: var(--ribit-navy);
+}
+.btn-quickview {
+  background: #f1f5f9;
+  color: var(--ribit-navy);
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.btn-quickview:hover {
+  background: #e2e8f0;
+  color: var(--ribit-gold-hover);
+}
+
+/* Offcanvas / Quote Drawer */
+.quote-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.quote-drawer.active {
+  right: 0;
+}
+.quote-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 34, 59, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  display: none;
+}
+.quote-drawer-backdrop.active {
+  display: block;
+}
+.quote-drawer-header {
+  padding: 20px 24px;
+  background: var(--ribit-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.quote-drawer-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.quote-drawer-close {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+.quote-drawer-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+.quote-items-container {
+  margin-bottom: 24px;
+}
+.drawer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #f8fafc;
+}
+.drawer-item-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.drawer-item-info {
+  flex-grow: 1;
+}
+.drawer-item-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ribit-navy);
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+.drawer-item-unit {
+  font-size: 12px;
+  color: #64748b;
+}
+.drawer-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.drawer-item-qty input {
+  width: 54px;
+  height: 32px;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.drawer-item-remove {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 15px;
+}
+
+.quote-drawer-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+/* Modals */
+.modal-product-header {
+  background: var(--ribit-navy);
+  color: #ffffff;
+  padding: 20px 28px;
+}
+.modal-product-header .btn-close {
+  filter: invert(1);
+}
+
+/* Kenyan Trust Badge Section */
+.kenyan-context-strip {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 25px 0;
+}
+.trust-metric-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.trust-metric-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(234, 160, 17, 0.15);
+  color: var(--ribit-gold-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.trust-metric-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ribit-navy);
+  margin-bottom: 2px;
+}
+.trust-metric-content p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* WhatsApp Floating Quick Action */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 86px;
+  right: 24px;
+  z-index: 998;
+  background: #25d366;
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.whatsapp-floating-btn:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Quote Notification Toast */
+.ribit-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--ribit-navy);
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--ribit-gold);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+.ribit-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.ribit-toast i {
+  color: var(--ribit-gold);
+  font-size: 18px;
+}
