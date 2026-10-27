@@ -1,3 +1,50 @@
+<?php
+// Handle direct download request if triggered with ?dl=1
+if (isset($_GET['dl'])) {
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
+    $candidates = [
+        __DIR__ . '/Final DC Epz.apk',
+        dirname(__DIR__) . '/Final DC Epz.apk'
+    ];
+    $filePath = null;
+    foreach ($candidates as $c) {
+        if (file_exists($c) && is_readable($c)) {
+            $filePath = $c;
+            break;
+        }
+    }
+    if (!$filePath) {
+        http_response_code(404);
+        die('Error: APK file not found.');
+    }
+
+    $filesize = filesize($filePath);
+    $filename = 'Final DC Epz.apk';
+
+    // application/octet-stream prevents WAF/CDN 403 blocks on .apk MIME types
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="' . $filename . '"');
+    header('Content-Length: ' . $filesize);
+    header('Cache-Control: private, no-transform, no-store, must-revalidate');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+
+    $chunkSize = 1024 * 512;
+    $fp = fopen($filePath, 'rb');
+    if ($fp) {
+        while (!feof($fp)) {
+            echo fread($fp, $chunkSize);
+            flush();
+        }
+        fclose($fp);
+    } else {
+        readfile($filePath);
+    }
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,14 +148,18 @@
             font-size: 13px;
             color: #34d399;
         }
-        .direct-link {
-            display: inline-block;
-            margin-top: 14px;
+        .alt-links {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
             font-size: 13px;
+        }
+        .alt-link {
             color: #94a3b8;
             text-decoration: underline;
         }
-        .direct-link:hover {
+        .alt-link:hover {
             color: #cbd5e1;
         }
         .instructions {
@@ -133,7 +184,6 @@
 
     <div class="card">
         <div class="icon">
-            <!-- Android / Download Icon -->
             <svg viewBox="0 0 24 24">
                 <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.59 3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3V7a1 1 0 0 1 2 0z"/>
             </svg>
@@ -142,17 +192,18 @@
         <h1>App Download</h1>
         <div class="filename">Final DC Epz.apk &bull; 25.1 MB</div>
 
-        <a href="download.php" class="btn-download" id="dlBtn">
+        <a href="index.php?dl=1" class="btn-download" id="dlBtn">
             <svg viewBox="0 0 24 24">
                 <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
             </svg>
             Download APK
         </a>
 
-        <div class="status" id="statusMsg">Download started... Check notifications.</div>
+        <div class="status" id="statusMsg">Download starting... Check notifications.</div>
 
-        <div>
-            <a href="Final%20DC%20Epz.apk" download="Final DC Epz.apk" class="direct-link">Direct file link</a>
+        <div class="alt-links">
+            <a href="download.php" class="alt-link">Mirror 1</a>
+            <a href="Final%20DC%20Epz.apk" download="Final DC Epz.apk" class="alt-link">Direct File Link</a>
         </div>
 
         <div class="instructions">
