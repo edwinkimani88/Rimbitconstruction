@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Download App (.apk)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 32px 24px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 16px;
+            background: #059669;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+        }
+        .icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #ffffff;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+        .filename {
+            font-family: monospace;
+            font-size: 13px;
+            color: #94a3b8;
+            background: #0f172a;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 24px;
+            border: 1px solid #334155;
+            word-break: break-all;
+        }
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: #10b981;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+            transition: all 0.2s ease;
+        }
+        .btn-download:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+        .btn-download:active {
+            transform: translateY(1px);
+        }
+        .btn-download svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+        .status {
+            display: none;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #34d399;
+        }
+        .direct-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #94a3b8;
+            text-decoration: underline;
+        }
+        .direct-link:hover {
+            color: #cbd5e1;
+        }
+        .instructions {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid #334155;
+            font-size: 12px;
+            color: #94a3b8;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .instructions ol {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+        .instructions li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="icon">
+            <!-- Android / Download Icon -->
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.59 3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3V7a1 1 0 0 1 2 0z"/>
+            </svg>
+        </div>
+
+        <h1>App Download</h1>
+        <div class="filename">Final DC Epz.apk &bull; 25.1 MB</div>
+
+        <a href="download.php" class="btn-download" id="dlBtn">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Download APK
+        </a>
+
+        <div class="status" id="statusMsg">Download started... Check notifications.</div>
+
+        <div>
+            <a href="Final%20DC%20Epz.apk" download="Final DC Epz.apk" class="direct-link">Direct file link</a>
+        </div>
+
+        <div class="instructions">
+            <strong>Android Installation Note:</strong>
+            <ol>
+                <li>Tap <strong>Download APK</strong> above.</li>
+                <li>If prompted with <em>"File might be harmful"</em>, tap <strong>Download anyway</strong>.</li>
+                <li>When finished, tap <strong>Open</strong> and choose <strong>Install</strong>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.getElementById('dlBtn');
+        var msg = document.getElementById('statusMsg');
+        if (btn && msg) {
+            btn.addEventListener('click', function() {
+                msg.style.display = 'block';
+            });
+        }
+    </script>
+
+</body>
+</html>
